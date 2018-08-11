@@ -2,10 +2,11 @@ package driver.driverinitlization;
 
 import lombok.extern.slf4j.Slf4j;
 import org.openqa.selenium.WebDriver;
-import propertiesreader.MainProperties;
-import propertiesreader.PropertiesReader;
 
-import static propertiesreader.PropertiesReader.getProperties;
+import java.util.Arrays;
+
+import static propertiesreader.BrowserPropertiesReader.getBrowserProperties;
+
 
 @Slf4j
 public final class WebDriverFactoryMethod {
@@ -13,16 +14,26 @@ public final class WebDriverFactoryMethod {
     }
 
     public static WebDriver getRequestedBrowser() {
-        SupportedBrowsers supportBrowsers = SupportedBrowsers.valueOf(getProperties(MainProperties.class).browserName());
-
-        switch (supportBrowsers) {
+        switch (getSupportBrowser()) {
             case CHROME:
+                log.info("<ChromeDriver> is being initialized");
                 return new ChromeWebDriver().init();
             case IE:
+                log.info("<IEDriver> is being initialized");
                 return new IEWebDriver().init();
-            default:
-                log.warn("Requested browser value wasn't found. <ChromeDriver> will be used");
-                return new ChromeWebDriver().init();
+        }
+        return null;
+    }
+
+    private static SupportedBrowsers getSupportBrowser() {
+        try {
+            return SupportedBrowsers.valueOf(getBrowserProperties().browserName());
+        } catch (IllegalArgumentException e) {
+            log.warn("Requested browser is not supported. " +
+                    "List of supported browsers are " +
+                    Arrays.toString(SupportedBrowsers.values()) +
+                    " <ChromeDriver> will be used by default");
+            return SupportedBrowsers.CHROME;
         }
     }
 }

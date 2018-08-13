@@ -1,3 +1,6 @@
+import com.epam.reportportal.testng.ReportPortalTestNGListener;
+import lombok.extern.slf4j.Slf4j;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 import pageobjects.mainpage.CurrencyConverterPage;
 import pageobjects.mainpage.MainPage;
@@ -13,6 +16,8 @@ import static pageobjects.mainpage.CurrencyConverterPage.AvgBankCurrencyRows.USD
 import static utils.IFinanceStringUtils.getValueAsDecimal;
 import static utils.IFinanceStringUtils.roundValue;
 
+@Slf4j
+@Listeners({ReportPortalTestNGListener.class})
 public class LoginTest {
 
     private final String amountToExchange = "750";

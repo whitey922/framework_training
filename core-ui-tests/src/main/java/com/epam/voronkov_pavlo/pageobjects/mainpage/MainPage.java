@@ -1,4 +1,4 @@
-package com.epam.voronkov_pavlo.pageobjects.main;
+package com.epam.voronkov_pavlo.pageobjects.mainpage;
 
 import com.epam.voronkov_pavlo.driver.Browser;
 import com.epam.voronkov_pavlo.pageobjects.basepage.BasePageIFinance;

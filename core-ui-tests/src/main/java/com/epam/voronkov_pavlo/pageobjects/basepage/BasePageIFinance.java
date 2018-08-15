@@ -1,7 +1,7 @@
 package com.epam.voronkov_pavlo.pageobjects.basepage;
 
-import com.epam.voronkov_pavlo.pageobjects.blocks.Header;
-import com.epam.voronkov_pavlo.pageobjects.blocks.SectionNavigation;
+import com.epam.voronkov_pavlo.pageobjects.basepage.blocks.Header;
+import com.epam.voronkov_pavlo.pageobjects.basepage.blocks.SectionNavigation;
 import org.openqa.selenium.support.FindBy;
 
 public abstract class BasePageIFinance {

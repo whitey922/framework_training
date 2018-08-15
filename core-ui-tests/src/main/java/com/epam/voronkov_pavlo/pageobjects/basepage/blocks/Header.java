@@ -1,4 +1,4 @@
-package com.epam.voronkov_pavlo.pageobjects.blocks;
+package com.epam.voronkov_pavlo.pageobjects.basepage.blocks;
 
 import org.openqa.selenium.support.FindBy;
 import ru.yandex.qatools.htmlelements.element.HtmlElement;

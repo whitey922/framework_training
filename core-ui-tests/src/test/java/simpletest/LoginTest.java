@@ -2,7 +2,7 @@ package simpletest;
 
 import base.IFinanceBaseTest;
 import com.epam.voronkov_pavlo.pageobjects.currencyconverterpage.CurrencyConverterPage;
-import com.epam.voronkov_pavlo.pageobjects.main.MainPage;
+import com.epam.voronkov_pavlo.pageobjects.mainpage.MainPage;
 import org.testng.annotations.Test;
 
 import java.math.BigDecimal;

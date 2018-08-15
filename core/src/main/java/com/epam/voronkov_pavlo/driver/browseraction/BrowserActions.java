@@ -30,4 +30,8 @@ public class BrowserActions {
         log.info("Driver is going to close");
         driver.quit();
     }
+
+    public static void maximizeBrowser() {
+        driver.manage().window().maximize();
+    }
 }

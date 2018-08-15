@@ -16,7 +16,6 @@ public class ChromeWebDriver implements WebDriverIInitializer {
     //more about chromeoptions https://peter.sh/experiments/chromium-command-line-switches/
     private ChromeOptions getChromeCapabilities() {
         ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.addArguments("--start-maximized");
         chromeOptions.addArguments("--disable-infobars");
 
         return chromeOptions;

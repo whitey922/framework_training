@@ -14,9 +14,13 @@ public class FirefoxWebDriver implements WebDriverIInitializer {
         return new FirefoxDriver(getFirefoxCapabilities());
     }
 
+    //http://kb.mozillazine.org/About:config_entries
+    //http://kb.mozillazine.org/Category:Preferences
     private FirefoxOptions getFirefoxCapabilities() {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
-        //TODO add options
+        firefoxOptions.addPreference("plugin.default_plugin_disabled", false);
+        firefoxOptions.addPreference("privacy.popups.disable_from_plugins", false);
+
         return firefoxOptions;
     }
 }

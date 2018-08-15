@@ -7,12 +7,14 @@ import com.epam.voronkov_pavlo.propertiesreader.IFinancePropertiesReader;
 
 import static com.epam.voronkov_pavlo.driver.browseraction.BrowserActions.closeBrowser;
 import static com.epam.voronkov_pavlo.driver.browseraction.BrowserActions.goTo;
+import static com.epam.voronkov_pavlo.driver.browseraction.BrowserActions.maximizeBrowser;
 
 @Slf4j
 public class IFinanceBaseTest {
     @BeforeMethod
     public void startTest() {
         log.info("==========Test started==========");
+        maximizeBrowser();
         goTo(IFinancePropertiesReader.getIFinanceProperties().baseUrl());
     }
 

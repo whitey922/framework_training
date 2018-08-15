@@ -2,6 +2,7 @@ package com.epam.voronkov_pavlo.driver.browseraction;
 
 import com.epam.voronkov_pavlo.driver.Browser;
 import lombok.extern.slf4j.Slf4j;
+import org.openqa.selenium.Dimension;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 
@@ -22,10 +23,6 @@ public class BrowserActions {
         ((JavascriptExecutor) driver).executeScript(jsScript);
     }
 
-    public static void scrollTo() {
-
-    }
-
     public static void closeBrowser() {
         log.info("Driver is going to close");
         driver.quit();
@@ -33,5 +30,9 @@ public class BrowserActions {
 
     public static void maximizeBrowser() {
         driver.manage().window().maximize();
+    }
+
+    public static void openBrowserWithSize(int width, int height) {
+        driver.manage().window().setSize(new Dimension(width, height));
     }
 }
